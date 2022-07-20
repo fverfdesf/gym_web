@@ -1,0 +1,986 @@
+/* edit */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	overflow-y: hidden;
+}
+
+#wrapper {
+	max-width: 800px;
+	margin: 0 auto;
+	position: relative;
+}
+
+body * {
+	font-size: .24rem;
+}
+
+#header {
+	background-color: #6da9e5;
+	position: sticky;
+	top: 0;
+	z-index: 10;
+	line-height: initial;
+}
+
+#header .panel-v1 {
+	padding: 0.15rem 0.2rem;
+	display: flex;
+	justify-content: space-between;
+	font-size: 0.23rem;
+
+}
+
+#header .panel-v1 .logo {
+	height: 0.4rem;
+	display: block;
+	margin: 0 auto;
+	margin-right: 0.2rem;
+}
+
+#header .panel-v1 .flex {
+	display: flex;
+	align-items: center;
+}
+
+#header .panel-v1 .events-type-area {
+	display: flex;
+	align-items: center;
+}
+
+#header .panel-v1 .events-type-area .btn {
+	padding: 0.05rem 0.22rem;
+	margin-left: 0.2rem;
+	color: #fff;
+	border-radius: 0.1rem;
+	cursor: pointer;
+	position: relative;
+}
+
+
+
+.menu-list-2 {
+	width: 100%;
+	background-color: #6da9e5;
+
+}
+
+.menu-list-2 .list-2 {
+	color: rgba(255, 255, 255, 0.8);
+
+}
+
+.menu-list-2 .list-2 td {
+	display: inline-block;
+	text-align: center;
+	border-right: 1px solid rgba(255, 255, 255, 0.8);
+	font-size: 0.2rem;
+	width: 20%;
+	margin: 0.05rem 0
+}
+
+.menu-list-2 .list-2 td:nth-child(5) {
+	border-right: none;
+}
+
+/* table style */
+.events-table .master td,
+.events-table .customer td,
+.events-table .draw td {
+	border: 1px solid rgb(197, 197, 197);
+	width: 20%;
+}
+
+/* table style */
+
+
+/* 卷軸樣式 */
+.events-area .events-div::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+	background-color: #ffffff;
+}
+
+.events-area .events-div::-webkit-scrollbar {
+	width: 6px;
+	border-radius: 4px;
+	background-color: black;
+}
+
+.events-area .events-div::-webkit-scrollbar-thumb {
+	background-color: #a8a8a8;
+}
+
+/* 卷軸樣式 */
+
+/* table style */
+.events-table .master td:nth-child(5),
+.events-table .customer td:nth-child(5),
+.events-table .draw td:nth-child(5) {
+	border-right: none;
+}
+
+.events-table .master td:nth-child(1),
+.events-table .customer td:nth-child(1),
+.events-table .draw td:nth-child(1) {
+	text-align: center;
+	font-size: 0.2rem;
+}
+
+.events-table .left-item,
+.events-table .right-item {
+	display: inline-block;
+	font-size: 0.2rem;
+}
+
+.events-table .master td>div {
+	display: flex;
+	justify-content: space-between;
+}
+
+.events-table .master .left-item {
+	color: rgb(172, 172, 172)
+}
+
+.events-table .master .border-none,
+.events-table .customer .border-none,
+.events-table .draw .border-none {
+	border: none;
+}
+
+.events-table .customer td {
+	text-align: right;
+}
+
+.events-table .draw .border-bottom,
+.events-table .customer .border-bottom {
+	border-bottom: 1px solid rgb(197, 197, 197);
+}
+
+/* table style */
+
+
+
+
+
+/* ------------------------ */
+#main {
+	background-color: #eee;
+}
+
+.events-area .top-bar .panel-v1 {
+	border-top: 1px solid #9fcfff;
+}
+
+.events-area .top-bar .gc-menu-list {
+	display: flex;
+	align-items: center;
+	overflow-x: auto;
+	overflow-y: hidden;
+	background-color: #6da9e5;
+}
+
+.events-area .top-bar .gc-menu-list .item {
+	color: rgba(255, 255, 255, 0.6);
+	text-align: center;
+	cursor: pointer;
+	min-width: 1.2rem;
+	padding: .14rem 0 .08rem 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: relative;
+}
+
+.events-area .top-bar .gc-menu-list .item.active {
+	padding-top: .09rem;
+	padding-bottom: .15rem;
+}
+
+.events-area .top-bar .gc-menu-list .item.active:after {
+	content: '\2714';
+	color: #ffdf1a;
+	position: absolute;
+	bottom: -.05rem;
+}
+
+.events-area .top-bar .gc-menu-list .item .icon {
+	width: .4rem;
+	position: relative;
+}
+
+.events-area .top-bar .gc-menu-list .item .icon img {
+	display: block;
+	margin: 0 auto;
+	width: 100%;
+	filter: grayscale(1) brightness(3);
+	opacity: 0.8;
+}
+
+.events-area .top-bar .gc-menu-list .item .icon .game-count {
+	font-size: .2rem;
+	color: #fff;
+	text-align: center;
+	border-radius: .4rem;
+	background-color: #798085;
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 1;
+	min-width: .35rem;
+	height: .3rem;
+	line-height: .3rem;
+	transform: translate(80%, -20%);
+	font-family: Arial;
+	padding: 0 .05rem;
+}
+
+.events-area .top-bar .gc-menu-list .item .txt {
+	padding-top: .1rem;
+	color: rgba(255, 255, 255, 0.8);
+	white-space: nowrap;
+	font-size: .22rem;
+}
+
+.events-area .top-bar .gc-menu-list .item.active .icon img {
+	filter: saturate(150%) brightness(1.15);
+	opacity: 1;
+}
+
+.events-area .top-bar .gc-menu-list .item.active .icon .game-count {
+	background: #ff6a6a;
+	color: #fff;
+}
+
+.events-area .top-bar .gc-menu-list .item.active .txt {
+	color: #fff;
+}
+
+.events-area .top-bar .panel-v2 {
+	display: flex;
+	align-items: center;
+	background-color: #fff;
+	border-bottom: 1px solid #d0d0d0;
+}
+
+.events-area .top-bar .events-reload-content {
+	background-color: #585858;
+	padding: .12rem .13rem;
+	color: #fff;
+	border-bottom-right-radius: .1rem;
+	display: flex;
+	align-items: center;
+	line-height: initial;
+}
+
+.events-area .top-bar .events-reload-second {
+	color: #ffd800;
+	width: .4rem;
+	text-align: center;
+	font-size: .32rem;
+	font-family: arial;
+}
+
+.events-area .top-bar .reload-icon {
+	cursor: pointer;
+	margin-left: .1rem;
+	font-size: .26rem;
+}
+
+.events-area .top-bar .reload-icon.active {
+	animation: rotate 1.5s linear infinite;
+}
+
+@-webkit-keyframes rotate {
+	100% {
+		-webkit-transform: rotate(360deg);
+	}
+}
+
+@keyframes rotate {
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.events-area .top-bar .gtype-menu-list-area {
+	overflow-x: auto;
+	overflow-y: hidden;
+	flex: 1;
+	padding-bottom: .04rem;
+}
+
+.events-area .top-bar .gtype-menu-list {
+	display: flex;
+	align-items: center;
+	line-height: initial;
+}
+
+.events-area .top-bar .gtype-menu-list .item {
+	cursor: pointer;
+	padding: .08rem .15rem;
+	line-height: initial;
+	white-space: nowrap;
+	border-radius: .07rem;
+	margin-left: .1rem;
+	display: flex;
+	align-items: center;
+}
+
+.events-area .top-bar .gtype-menu-list .item.active {
+	background-color: #eea100;
+	color: #fff;
+}
+
+.events-area .events-div {
+	overflow-y: auto;
+	position: relative;
+}
+
+.events-area .events-div .events-table {
+	border-collapse: separate;
+	width: 100%;
+	background-color: #fff;
+}
+
+.events-area .events-div .events-table td {
+	padding: .15rem .1rem;
+	vertical-align: middle;
+}
+
+.events-area .events-div .events-table .league-name-tr td {
+	background-color: #dfdfdf;
+	border-bottom: 1px solid #d0d0d0;
+	color: #444;
+	font-weight: bold;
+}
+
+
+
+.events-area .events-div .events-table .ranks-tr td {
+	background-color: #d5ebff;
+	color: #000;
+	border-bottom: 1px solid #eee;
+	position: sticky;
+	top: 0;
+	padding: .07rem .1rem;
+}
+
+.events-area .events-div .events-table .ranks-tr td * {
+	font-size: .22rem;
+}
+
+.events-area .events-div .events-table .ranks-tr .content-flex {
+	display: flex;
+
+}
+
+.events-area .events-div .events-table .ranks-tr .fixed-w {
+	width: 44%;
+}
+
+.events-area .events-div .events-table .ranks-tr .left-flex {
+	display: flex;
+	align-items: center;
+	flex-grow: 1;
+}
+
+.events-area .events-div .events-table .game-start-datetime {
+	color: #aaa;
+	font-size: .2rem !important;
+}
+
+
+.events-area .events-div .events-table .ranks-tr .right-flex {
+	flex: 1;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	text-align: right;
+	/* margin-left: .1rem; */
+	flex-grow: 5;
+}
+
+.events-area .events-div .events-table .ranks-tr .right-flex>div {
+	margin: 0 0.2rem;
+}
+
+.events-area .events-div .events-table .ranks-tr .play-against {
+	text-align: center;
+	color: #aaa;
+}
+
+.events-area .events-div .events-table .ranks-tr .rank-notes {
+	font-size: .2rem;
+	color: #999;
+	padding-top: .1rem;
+}
+
+.events-area .events-div .events-table .ranks-tr .master-txt {
+	color: #ff9600;
+}
+
+.events-area .events-div .events-table .ranks-tr .full-rank {
+	flex: 1;
+	margin-left: .2rem;
+}
+
+.events-area .events-div .events-table .btype-tr td {
+	border-right: 1px solid #f3f3f3;
+	border-bottom: 1px solid #f3f3f3;
+}
+
+.events-area .events-div .events-table .btype-tr .left-flex {
+	display: flex;
+	align-items: center;
+}
+
+.events-area .events-div .events-table .btype-tr .ot-div {
+	color: #aaa;
+}
+
+.events-area .events-div .events-table .btype-tr .right-flex {
+	flex: 1;
+	margin-left: .1rem;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	text-align: right;
+}
+
+.events-area .events-div .events-table .btype-tr .play-td-1 {
+	width: 44%;
+}
+
+.events-area .events-div .events-table .btype-tr .play-td-1 .hds-div {
+	margin-left: .1rem;
+}
+
+.events-area .events-div .events-table .btype-tr .play-td-1 .odds-div {
+	margin-left: .3rem;
+}
+
+.events-area .events-div .events-table .btype-tr .play-td-2 {
+	width: 44%;
+}
+
+.events-area .events-div .events-table .btype-tr .play-td-2 .hds-div {
+	margin-right: .1rem;
+}
+
+.events-area .events-div .events-table .btype-tr .play-td-2 .odds-div {
+	margin-right: .3rem;
+}
+
+.events-area .events-div .events-table .btype-tr .odds-div {
+	color: #30679e;
+	font-weight: bold;
+}
+
+.events-area .events-div .events-table .btype-tr .play-btype {
+	text-align: center;
+	background-color: #eee;
+	font-size: .22rem;
+}
+
+.events-area .events-div .events-table .btype-tr .odds-click {
+	cursor: pointer;
+}
+
+.events-area .events-div .events-table .btype-tr .cross-odds-click {
+	cursor: pointer;
+}
+
+.events-area .events-div .events-table .btype-tr .cross-odds-click[check=check] {
+	background-color: #ffd5d5;
+}
+
+.events-area .events-div .events-table .btype-tr .cross-odds-click[check=check] .odds-div {
+	color: #0080ff;
+}
+
+.events-area .events-div .no-events {
+	background-color: #fff;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.events-area .events-div .no-events .img {
+	width: 1.5rem;
+	opacity: .3;
+}
+
+.events-area .events-div .no-events .txt {
+	margin-top: .2rem;
+	font-size: .36rem;
+	font-family: arial;
+	color: #000;
+}
+
+/*.ranks-tr, .btype-tr{
+	display:none;
+}*/
+
+.events-area .betting-div-mask {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 100;
+	background-color: rgba(0, 0, 0, .5);
+	display: none;
+}
+
+.events-area .betting-div-mask.on {
+	display: block;
+}
+
+.events-area .betting-div {
+	position: absolute;
+	z-index: 101;
+	background-color: #fff;
+	width: 95%;
+	max-height: 95%;
+	overflow: auto;
+	top: 100%;
+	left: 50%;
+	border-radius: .05rem;
+	transform: translate(-50%, 0);
+	line-height: initial;
+	display: none;
+}
+
+.events-area .betting-div.on {
+	display: block;
+	animation: btv_anm .2s linear;
+	animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes btv_anm {
+	100% {
+		top: 50%;
+		-webkit-transform: translate(-50%, -50%);
+	}
+}
+
+@keyframes btv_anm {
+	100% {
+		top: 50%;
+		transform: translate(-50%, -50%);
+	}
+}
+
+.events-area .betting-div .title-div {
+	border-bottom: 1px solid #92acc7;
+	color: #000;
+	padding: .1rem .15rem;
+	background-color: #d1e1f1;
+}
+
+.events-area .betting-div .title-div .btype-txt {
+	color: #0c8bff;
+}
+
+.events-area .betting-div .top-div {
+	background-color: #fff;
+	padding: .1rem;
+	max-height: 200px;
+	overflow: auto;
+}
+
+.events-area .betting-div .top-div * {
+	font-size: .22rem;
+}
+
+.events-area .betting-div .top-div .top-list {
+	border: 1px solid #ccc;
+	border-radius: .05rem;
+	margin-bottom: .1rem;
+}
+
+.events-area .betting-div .top-div .top-list:last-child {
+	margin-bottom: 0;
+}
+
+.events-area .betting-div .top-div .list-title {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border-bottom: solid 1px #ddd;
+	padding-left: .1rem;
+}
+
+.events-area .betting-div .top-div .no {
+	border: 1px solid #bbb;
+	color: #666;
+	border-radius: 50%;
+	width: .45rem;
+	height: .45rem;
+	line-height: .45rem;
+	text-align: center;
+	font-family: Arial;
+}
+
+.events-area .betting-div .top-div .cancel-btn {
+	color: #aaa;
+	font-size: .5rem;
+	cursor: pointer;
+	font-weight: 700;
+	text-align: center;
+	width: .6rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.events-area .betting-div .top-div .league-name {
+	padding: .1rem .12rem;
+}
+
+.events-area .betting-div .top-div .event-detail {
+	padding: .1rem .12rem;
+	border-top: solid 1px #ddd;
+	/*border-bottom: solid 1px #ddd;*/
+}
+
+.events-area .betting-div .top-div .bet-detail {
+	padding: .1rem .12rem;
+	padding-top: 0;
+	color: gray;
+}
+
+.events-area .betting-div .top-div .master {
+	color: #00C;
+}
+
+.events-area .betting-div .top-div .master-txt {
+	color: #ff9600;
+}
+
+.events-area .betting-div .top-div .bet-hd {
+	color: #f00;
+}
+
+.events-area .betting-div .top-div .bet-rank {
+	color: #0072ff;
+}
+
+.events-area .betting-div .top-div .bet-odds {
+	color: red;
+}
+
+.events-area .betting-div .center-div {
+	padding: .1rem;
+	border-top: 1px solid #92acc7;
+	border-bottom: solid 1px #92acc7;
+	background-color: #d1e1f1;
+}
+
+.events-area .betting-div .center-div .betting-tb td {
+	padding-bottom: .1rem;
+	width: 50%;
+}
+
+.events-area .betting-div .center-div .betting-tb tr:last-child td {
+	padding-bottom: 0px;
+}
+
+.events-area .betting-div .center-div .betting-tb td.c1 {
+	padding-left: .15rem;
+
+}
+
+.events-area .betting-div .center-div .betting-tb .flex-div {
+	display: flex;
+	align-items: center;
+}
+
+.events-area .betting-div .center-div .betting-tb .bet-amount-input {
+	flex: 1;
+	border: 0;
+	padding: .1rem;
+	width: 100%;
+	background-color: #fff;
+	color: #000;
+	outline: 0;
+	font-weight: 700;
+	pointer-events: none;
+	border-radius: .05rem;
+}
+
+.events-area .betting-div .center-div .betting-tb .cross-odds {
+	color: red;
+}
+
+.events-area .betting-div .center-div .betting-tb .sign-1 {
+	color: #222;
+	font-weight: bold;
+}
+
+.events-area .betting-div .center-div .betting-tb .symbol {
+	padding: 0 .05rem;
+}
+
+.events-area .betting-div .center-div .betting-tb .single-bet-limit-notes {
+	color: red;
+}
+
+.events-area .betting-div .center-div .quick-betting-area {
+	background-color: #fff;
+	border-radius: .05rem;
+	border: 1px solid #ccc;
+	display: flex;
+	align-items: center;
+	margin-top: .15rem;
+}
+
+.events-area .betting-div .center-div .quick-betting-confirm {
+	flex: 1;
+	cursor: pointer;
+	border-right: 1px solid #ccc;
+	padding: .2rem 0;
+	text-align: center;
+	font-weight: bold;
+	color: #666;
+}
+
+.events-area .betting-div .center-div .quick-betting-confirm:active {
+	background-color: #d8f9ff;
+}
+
+.events-area .betting-div .center-div .quick-betting-confirm:last-child {
+	border-right: 0;
+}
+
+.events-area .betting-div .center-div .number-input-area {
+	background-color: #fff;
+	border-radius: .05rem;
+	border: 1px solid #2682d5;
+	display: flex;
+	align-items: center;
+	margin-top: .15rem;
+	flex-wrap: wrap;
+}
+
+.events-area .betting-div .center-div .number-input-area .number {
+	cursor: pointer;
+	border-right: 1px solid #2682d5;
+	border-bottom: 1px solid #2682d5;
+	font-weight: bold;
+	color: #2682d5;
+	font-size: .36rem;
+	height: .7rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.events-area .betting-div .center-div .number-input-area .number:active {
+	background-color: #d8f9ff;
+}
+
+.events-area .betting-div .center-div .number-input-area .number.n1,
+.events-area .betting-div .center-div .number-input-area .number.n2,
+.events-area .betting-div .center-div .number-input-area .number.n3,
+.events-area .betting-div .center-div .number-input-area .number.n4,
+.events-area .betting-div .center-div .number-input-area .number.n5,
+.events-area .betting-div .center-div .number-input-area .number.n6,
+.events-area .betting-div .center-div .number-input-area .number.n7,
+.events-area .betting-div .center-div .number-input-area .number.n8,
+.events-area .betting-div .center-div .number-input-area .number.n9 {
+	width: 16.8%;
+}
+
+.events-area .betting-div .center-div .number-input-area .number.del {
+	width: 16%;
+}
+
+.events-area .betting-div .center-div .number-input-area .number.n0 {
+	width: 32.8%;
+}
+
+.events-area .betting-div .center-div .number-input-area .number.del,
+.events-area .betting-div .center-div .number-input-area .number.n0 {
+	border-right: 0;
+}
+
+.events-area .betting-div .center-div .number-input-area .number.n6,
+.events-area .betting-div .center-div .number-input-area .number.n7,
+.events-area .betting-div .center-div .number-input-area .number.n8,
+.events-area .betting-div .center-div .number-input-area .number.n9,
+.events-area .betting-div .center-div .number-input-area .number.n0 {
+	border-bottom: 0;
+}
+
+
+.events-area .betting-div .bottom-div {
+	padding: .15rem .2rem;
+	border-top: solid 1px #fff;
+	background-color: #d1e1f1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.events-area .betting-div .bottom-div .betting-cancel {
+	flex: 1;
+	background-color: #898989;
+	cursor: pointer;
+	padding: .2rem 0;
+	border-radius: .05rem;
+	font-size: .28rem;
+	color: #fff;
+	line-height: initial;
+	text-align: center;
+	text-decoration: none;
+}
+
+.events-area .betting-div .bottom-div .betting-cancel:hover {
+	background-color: #ababab;
+}
+
+.events-area .betting-div .bottom-div .betting-confirm {
+	flex: 1;
+	background-color: #FF8A00;
+	cursor: pointer;
+	padding: .2rem 0;
+	border-radius: .05rem;
+	font-size: .28rem;
+	color: #fff;
+	line-height: initial;
+	text-align: center;
+	margin-left: .2rem;
+	text-decoration: none;
+}
+
+.events-area .betting-div .bottom-div .betting-confirm:hover {
+	background-color: #F08506;
+}
+
+.events-area .betting-div .bottom-div .betting-clear {
+	flex: 1;
+	background-color: #41b590;
+	cursor: pointer;
+	padding: .2rem 0;
+	border-radius: .05rem;
+	font-size: .28rem;
+	color: #fff;
+	line-height: initial;
+	text-align: center;
+	margin-left: .2rem;
+	text-decoration: none;
+}
+
+.events-area .betting-div .bottom-div .betting-clear:hover {
+	background-color: #41b590;
+}
+
+
+.events-area .league-content-div {
+	font-family: arial, 微軟正黑體;
+}
+
+.events-area .league-content-div .league-title {
+	color: #FFF;
+	font-size: .3rem;
+	text-align: center;
+	background-color: #106eb7;
+	padding: .15rem;
+}
+
+.events-area .league-content-div .league-header {
+	height: .7rem;
+	line-height: .7rem;
+	color: #242424;
+	border-bottom: .04rem solid #c1c1c1;
+	background-color: #fff;
+	padding: 0 .15rem;
+}
+
+.events-area .league-content-div .league-content {
+	max-height: 250px;
+	min-height: .7rem;
+	overflow-y: auto;
+	background: #fff;
+	padding: 0 .15rem;
+}
+
+.events-area .league-content-div .league-footer {
+	padding: .15rem;
+	background-color: #d3e3f5;
+	border-bottom: #106eb7 1px solid;
+	border-radius: 0 0 3px 3px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.events-area .league-content-div .league-submit {
+	padding: .12rem .4rem;
+	background: #1f84d3;
+	border-top: #8abfe8 1px solid;
+	border-bottom: #1874ca 1px solid;
+	color: #fff;
+	font-size: .3rem;
+	cursor: pointer;
+	border-radius: 6px;
+}
+
+.events-area .league-content-div .league-submit:hover {
+	background: #2ea0f9;
+}
+
+.events-area .league-content-div .league-table td {
+	padding: .1rem 0;
+}
+
+.events-area .league-content-div .league-table td:not(:first-child) {
+	padding-left: .2rem;
+}
+
+.events-area .league-content-div input[type="checkbox"] {
+	width: .28rem;
+	height: .28rem;
+	margin: 0;
+	margin-right: .08rem;
+	position: relative;
+	top: .035rem;
+}
+
+.events-sort-type-select {
+	background-color: transparent;
+	border: 0px;
+	padding: 0px;
+	height: unset;
+	line-height: unset;
+	display: inline-block;
+	float: none;
+}
+
+.events-sort-type-select:after {
+	display: none;
+}
+
+.events-sort-type-select ul.list {
+	left: -.1rem;
+	max-height: 250px;
+	overflow: auto;
+	bottom: 150%;
+	top: auto !important;
+}
+
+.events-sort-type-select ul.list .option {
+	color: #333;
+	line-height: initial;
+	min-height: initial;
+	padding: .1rem;
+}
+
+.events-sort-type-select ul.list .option:hover {
+	background-color: #519fdf !important;
+	color: #fff;
+}

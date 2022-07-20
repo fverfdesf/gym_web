@@ -1,0 +1,2133 @@
+<html style="font-size: 106px;">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="format-detection" content="telephone=no ">
+    <meta content="no-cache" http-equiv="Cache-Control">
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <meta content="" name="author">
+    <title>會員系統</title>
+    <link href="templates/css/reset.css?cache=101" rel="stylesheet">
+    <link href="templates/css/sty1_general1.css?cache=14" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://apigame.ob-sport.net/v2/mobile/layer/theme/default/layer.css?v=3.1.1"
+        id="layuicss-layer">
+</head>
+
+<body>
+    <nolink href="templates/css/tw_style.css?cache=166" rel="stylesheet" type="text/css">
+        <link href="layer/self_skin.css" rel="stylesheet" type="text/css">
+        <link href="nice_select/css/nice-select.css" rel="stylesheet" type="text/css">
+        <link href="pushy/css/pushy.css" rel="stylesheet" type="text/css">
+        <link href="font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="templates/css/index.css?c=116">
+
+        <script src="assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+        <script src="templates/js/jquery.cookie.js" type="text/javascript"></script>
+        <!--<link rel="shortcut icon" href=""/>-->
+
+
+        <div id="wrapper">
+            <!--slot0-->
+            <div id="header">
+                <div class="panel-v1">
+                    <div class="header-left ">
+                        <!--slot1-->
+                        <div id="events-type-area" class="events-type-area">
+                            <div class="btn game-before active" onclick="events_type_btn_click(this, 1);">賽前</div>
+                            <div class="btn game-now" onclick="events_type_btn_click(this, 2);">
+                                滾球
+                                <div id="events-type-2-game-count" class="game-count"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header-center txt"></div>
+                    <div class="header-right flex">
+                        <img class="logo" src="templates/images/jsh-logo.png?c=2">
+                    </div>
+                </div>
+            </div>
+
+            <div id="main">
+                <!--slot=0-->
+                <div id="events-area" class="events-area" onselectstart="return false">
+                    <!--slot=9-->
+                    <div id="top-bar" class="top-bar">
+                        <div class="panel-v1">
+                            <div class="gc-menu-list" id="gc-menu-list">
+                                <!--slot=1-->
+
+                                <div class="item active" onclick="gc_menu_item_click(this, '14');">
+                                    <div class="icon">
+                                        <img src="templates/images/top_menu_soccer.svg">
+                                        <div class="game-count">21</div>
+                                    </div>
+                                    <div class="txt">頂級足球</div>
+                                </div>
+
+                                <div class="item" onclick="gc_menu_item_click(this, '13');">
+                                    <div class="icon">
+                                        <img src="templates/images/top_menu_soccer.svg">
+                                        <div class="game-count">135</div>
+                                    </div>
+                                    <div class="txt">其他足球</div>
+                                </div>
+
+
+                                <div class="item hidden" onclick="gc_menu_item_click(this, '4');">
+                                    <div class="icon">
+                                        <img src="templates/images/top_menu_baseball.svg">
+                                        <div class="game-count">0</div>
+                                    </div>
+                                    <div class="txt">日棒</div>
+                                </div>
+
+
+                                <div class="item" onclick="gc_menu_item_click(this, '11');">
+                                    <div class="icon">
+                                        <img src="templates/images/top_menu_basketball.svg">
+                                        <div class="game-count">24</div>
+                                    </div>
+                                    <div class="txt">其他籃球</div>
+                                </div>
+
+                                <div class="item" onclick="gc_menu_item_click(this, '2');">
+                                    <div class="icon">
+                                        <img src="templates/images/lottery.svg">
+                                        <div class="game-count">42</div>
+                                    </div>
+                                    <div class="txt">彩球</div>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+                        <div class="panel-v2">
+                            <div class="events-reload-content">
+                                <div id="events-reload-second" class="events-reload-second">5</div>
+                                <div id="events-reload-icon" class="reload-icon fa fa-refresh"
+                                    onclick="events_reload_all();"></div>
+                            </div>
+                            <div id="gtype-menu-list-area" class="gtype-menu-list-area">
+
+                                <!--slot=2-->
+                                <div id="14-gtype-menu-list" class="gtype-menu-list">
+
+                                    <div class="item active" onclick="show_events(this, '14', '1', '');">全場<div
+                                            class="game-count-outer">(<font class="game-count">7</font>)</div>
+                                    </div>
+
+                                    <div class="item" onclick="show_events(this, '14', '2', '');">上半場<div
+                                            class="game-count-outer">(<font class="game-count">7</font>)</div>
+                                    </div>
+
+                                    <div class="item" onclick="show_events(this, '14', '7', '2022-07-20');">07/20過關<div
+                                            class="game-count-outer">(<font class="game-count">7</font>)</div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- version2 -->
+                        <table class="menu-list-2">
+                            <tr class="list-2">
+                                <td>對陣</td>
+                                <td>讓分</td>
+                                <td>大小</td>
+                                <td>獨贏</td>
+                                <td>單雙</td>
+                            </tr>
+                        </table>
+
+                        <div id="events-div" class="events-div" style="height: 612px;">
+                            <!--slot=5-->
+                            <table class="events-table" style="border-collapse: collapse;">
+                                <tbody>
+                                    <tr class="league-name-tr">
+                                        <td colspan="100%">歐冠盃外圍賽-全場</td>
+                                    </tr>
+
+                                    <!-- 隊伍列 -->
+                                    <tr class="ranks-tr">
+                                        <td class="fixed-w" colspan="5">
+                                            <div class="content-flex">
+                                                <div class="left-flex">
+                                                    <div class=" game-start-datetime">
+                                                        07-20<br>09:00
+                                                    </div>
+                                                </div>
+                                                <div class="right-flex">
+                                                    <div>
+                                                        <div>帕特里奧坦斯</div>
+                                                        <!-- <div class="rank-notes hidden"></div> -->
+                                                    </div>
+                                                    <div class="play-against">
+                                                        VS
+                                                    </div>
+                                                    <div>佩雷拉<font class="master-txt">(主)</font>
+                                                    </div>
+                                                    <!-- <div class="rank-notes hidden"></div> -->
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <!-- 表格內容 -->
+                                    <tr class="master">
+                                        <td class="border-none">主</td>
+                                        <td>
+                                            <div>
+                                                <span class="left-item">1</span>
+                                                <span class="right-item">1.01</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <span class="left-item">2.5</span>
+                                                <span class="right-item">1.07</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <span class="left-item">2.5</span>
+                                                <span class="right-item">1.07</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <span class="left-item">2.5</span>
+                                                <span class="right-item">1.07</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="customer">
+                                        <td class="border-none">客</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr class="draw">
+                                        <td class="border-none border-bottom">和</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>2</td>
+                                        <td>3</td>
+                                    </tr>
+
+                                    <tr class="master">
+                                        <td class="border-none">主</td>
+                                        <td>
+                                            <div>
+                                                <span class="left-item">1</span>
+                                                <span class="right-item">1.01</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <span class="left-item">2.5</span>
+                                                <span class="right-item">1.07</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <span class="left-item">2.5</span>
+                                                <span class="right-item">1.07</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <span class="left-item">2.5</span>
+                                                <span class="right-item">1.07</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="customer">
+                                        <td class="border-none border-bottom">客</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr class="master">
+                                        <td class="border-none">主</td>
+                                        <td>
+                                            <div>
+                                                <span class="left-item">1</span>
+                                                <span class="right-item">1.01</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <span class="left-item">2.5</span>
+                                                <span class="right-item">1.07</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <span class="left-item">2.5</span>
+                                                <span class="right-item">1.07</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <span class="left-item">2.5</span>
+                                                <span class="right-item">1.07</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="customer">
+                                        <td class="border-none border-bottom">客</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr class="master">
+                                        <td class="border-none ">主</td>
+                                        <td>
+                                            <div>
+                                                <span class="left-item">1</span>
+                                                <span class="right-item">1.01</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <span class="left-item">2.5</span>
+                                                <span class="right-item">1.07</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <span class="left-item">2.5</span>
+                                                <span class="right-item">1.07</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <span class="left-item">2.5</span>
+                                                <span class="right-item">1.07</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="customer">
+                                        <td class="border-none border-bottom">客</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                    </tr>
+
+                                    <tr class="league-name-tr">
+                                        <td colspan="100%">墨西哥超級聯賽-全場</td>
+                                    </tr>
+
+                                    <tr class="ranks-tr">
+                                        <td class="fixed-w" colspan="5">
+                                            <div class="content-flex">
+                                                <div class="left-flex">
+                                                    <div class=" game-start-datetime">
+                                                        07-20<br>09:00
+                                                    </div>
+                                                </div>
+                                                <div class="right-flex">
+                                                    <div>
+                                                        <div>帕特里奧坦斯</div>
+                                                        <!-- <div class="rank-notes hidden"></div> -->
+                                                    </div>
+                                                    <div class="play-against">
+                                                        VS
+                                                    </div>
+                                                    <div>佩雷拉<font class="master-txt">(主)</font>
+                                                    </div>
+                                                    <!-- <div class="rank-notes hidden"></div> -->
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr class="master">
+                                        <td class="border-none">主</td>
+                                        <td>
+                                            <div>
+                                                <span class="left-item">1</span>
+                                                <span class="right-item">1.01</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <span class="left-item">2.5</span>
+                                                <span class="right-item">1.07</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <span class="left-item">2.5</span>
+                                                <span class="right-item">1.07</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <span class="left-item">2.5</span>
+                                                <span class="right-item">1.07</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="customer">
+                                        <td class="border-none">客</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr class="draw">
+                                        <td class="border-none border-bottom">和</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>2</td>
+                                        <td>3</td>
+                                    </tr>
+
+                                    <tr class="master">
+                                        <td class="border-none">主</td>
+                                        <td>
+                                            <div>
+                                                <span class="left-item">1</span>
+                                                <span class="right-item">1.01</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <span class="left-item">2.5</span>
+                                                <span class="right-item">1.07</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <span class="left-item">2.5</span>
+                                                <span class="right-item">1.07</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <span class="left-item">2.5</span>
+                                                <span class="right-item">1.07</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="customer">
+                                        <td class="border-none border-bottom">客</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr class="master">
+                                        <td class="border-none">主</td>
+                                        <td>
+                                            <div>
+                                                <span class="left-item">1</span>
+                                                <span class="right-item">1.01</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <span class="left-item">2.5</span>
+                                                <span class="right-item">1.07</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <span class="left-item">2.5</span>
+                                                <span class="right-item">1.07</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <span class="left-item">2.5</span>
+                                                <span class="right-item">1.07</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="customer">
+                                        <td class="border-none border-bottom">客</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr class="master">
+                                        <td class="border-none">主</td>
+                                        <td>
+                                            <div>
+                                                <span class="left-item">1</span>
+                                                <span class="right-item">1.01</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <span class="left-item">2.5</span>
+                                                <span class="right-item">1.07</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <span class="left-item">2.5</span>
+                                                <span class="right-item">1.07</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <span class="left-item">2.5</span>
+                                                <span class="right-item">1.07</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="customer">
+                                        <td class="border-none border-bottom">客</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                    </tr>
+
+                                    <tr class="league-name-tr">
+                                        <td colspan="100%">墨西哥超級聯賽-全場</td>
+                                    </tr>
+
+                                    <tr class="ranks-tr">
+                                        <td class="fixed-w" colspan="5">
+                                            <div class="content-flex">
+                                                <div class="left-flex">
+                                                    <div class=" game-start-datetime">
+                                                        07-20<br>09:00
+                                                    </div>
+                                                </div>
+                                                <div class="right-flex">
+                                                    <div>
+                                                        <div>帕特里奧坦斯</div>
+                                                        <!-- <div class="rank-notes hidden"></div> -->
+                                                    </div>
+                                                    <div class="play-against">
+                                                        VS
+                                                    </div>
+                                                    <div>佩雷拉<font class="master-txt">(主)</font>
+                                                    </div>
+                                                    <!-- <div class="rank-notes hidden"></div> -->
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <!-- 表格內容 -->
+                                    <tr class="master">
+                                        <td class="border-none">主</td>
+                                        <td>
+                                            <div>
+                                                <span class="left-item">1</span>
+                                                <span class="right-item">1.01</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <span class="left-item">2.5</span>
+                                                <span class="right-item">1.07</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <span class="left-item">2.5</span>
+                                                <span class="right-item">1.07</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <span class="left-item">2.5</span>
+                                                <span class="right-item">1.07</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="customer">
+                                        <td class="border-none">客</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr class="draw">
+                                        <td class="border-none border-bottom">和</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>2</td>
+                                        <td>3</td>
+                                    </tr>
+
+                                    <tr class="master">
+                                        <td class="border-none">主</td>
+                                        <td>
+                                            <div>
+                                                <span class="left-item">1</span>
+                                                <span class="right-item">1.01</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <span class="left-item">2.5</span>
+                                                <span class="right-item">1.07</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <span class="left-item">2.5</span>
+                                                <span class="right-item">1.07</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <span class="left-item">2.5</span>
+                                                <span class="right-item">1.07</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="customer">
+                                        <td class="border-none border-bottom">客</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr class="master">
+                                        <td class="border-none">主</td>
+                                        <td>
+                                            <div>
+                                                <span class="left-item">1</span>
+                                                <span class="right-item">1.01</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <span class="left-item">2.5</span>
+                                                <span class="right-item">1.07</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <span class="left-item">2.5</span>
+                                                <span class="right-item">1.07</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <span class="left-item">2.5</span>
+                                                <span class="right-item">1.07</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="customer">
+                                        <td class="border-none border-bottom">客</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr class="master">
+                                        <td class="border-none">主</td>
+                                        <td>
+                                            <div>
+                                                <span class="left-item">1</span>
+                                                <span class="right-item">1.01</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <span class="left-item">2.5</span>
+                                                <span class="right-item">1.07</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <span class="left-item">2.5</span>
+                                                <span class="right-item">1.07</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <span class="left-item">2.5</span>
+                                                <span class="right-item">1.07</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="customer">
+                                        <td class="border-none border-bottom">客</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                    </tr>
+
+                                    <tr class="league-name-tr">
+                                        <td colspan="100%">墨西哥超級聯賽-全場</td>
+                                    </tr>
+
+                                    <tr class="ranks-tr">
+                                        <td class="fixed-w" colspan="5">
+                                            <div class="content-flex">
+                                                <div class="left-flex">
+                                                    <div class=" game-start-datetime">
+                                                        07-20<br>09:00
+                                                    </div>
+                                                </div>
+                                                <div class="right-flex">
+                                                    <div>
+                                                        <div>帕特里奧坦斯</div>
+                                                        <!-- <div class="rank-notes hidden"></div> -->
+                                                    </div>
+                                                    <div class="play-against">
+                                                        VS
+                                                    </div>
+                                                    <div>佩雷拉<font class="master-txt">(主)</font>
+                                                    </div>
+                                                    <!-- <div class="rank-notes hidden"></div> -->
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr class="master">
+                                        <td class="border-none">主</td>
+                                        <td>
+                                            <div>
+                                                <span class="left-item">1</span>
+                                                <span class="right-item">1.01</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <span class="left-item">2.5</span>
+                                                <span class="right-item">1.07</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <span class="left-item">2.5</span>
+                                                <span class="right-item">1.07</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <span class="left-item">2.5</span>
+                                                <span class="right-item">1.07</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="customer">
+                                        <td class="border-none">客</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr class="draw">
+                                        <td class="border-none border-bottom">和</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>2</td>
+                                        <td>3</td>
+                                    </tr>
+
+                                    <tr class="master">
+                                        <td class="border-none">主</td>
+                                        <td>
+                                            <div>
+                                                <span class="left-item">1</span>
+                                                <span class="right-item">1.01</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <span class="left-item">2.5</span>
+                                                <span class="right-item">1.07</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <span class="left-item">2.5</span>
+                                                <span class="right-item">1.07</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <span class="left-item">2.5</span>
+                                                <span class="right-item">1.07</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="customer">
+                                        <td class="border-none border-bottom">客</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr class="master">
+                                        <td class="border-none">主</td>
+                                        <td>
+                                            <div>
+                                                <span class="left-item">1</span>
+                                                <span class="right-item">1.01</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <span class="left-item">2.5</span>
+                                                <span class="right-item">1.07</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <span class="left-item">2.5</span>
+                                                <span class="right-item">1.07</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <span class="left-item">2.5</span>
+                                                <span class="right-item">1.07</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="customer">
+                                        <td class="border-none border-bottom">客</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr class="master">
+                                        <td class="border-none">主</td>
+                                        <td>
+                                            <div>
+                                                <span class="left-item">1</span>
+                                                <span class="right-item">1.01</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <span class="left-item">2.5</span>
+                                                <span class="right-item">1.07</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <span class="left-item">2.5</span>
+                                                <span class="right-item">1.07</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <span class="left-item">2.5</span>
+                                                <span class="right-item">1.07</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="customer">
+                                        <td class="border-none border-bottom">客</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <!-- 表格內容 -->
+
+                                    <!-- <tr class="ranks-tr">
+                                        <td class="fixed-w">
+                                            <div class="left-flex">
+                                                <div class="game-start-datetime">
+                                                    07-20<br>00:00
+                                                </div>
+                                                <div class="right-flex">
+                                                    <div>
+                                                        <div>蘇黎世</div>
+                                                        <div class="rank-notes hidden"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="play-against">
+                                            VS
+                                        </td>
+                                        <td class="fixed-w">
+                                            <div>卡拉巴克<font class="master-txt">(主)</font>
+                                            </div>
+                                            <div class="rank-notes hidden"></div>
+                                        </td>
+                                    </tr>
+                                    <tr class="btype-tr">
+                                        <td class="play-td-1  odds-click" eid="24591" gc="14" gtype="1" btype="1"
+                                            bindex="1" bhd="0-60" bodds="0.940">
+                                            <div class="left-flex">
+                                                <div class="ot-div"></div>
+                                                <div class="right-flex">
+                                                    <div class="hds-div"></div>
+                                                    <div class="odds-div">
+                                                        0.940
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="play-btype">
+                                            讓分
+                                        </td>
+                                        <td class="play-td-2  odds-click" eid="24591" gc="14" gtype="1" btype="1"
+                                            bindex="2" bhd="0-60" bodds="0.940">
+                                            <div class="left-flex">
+                                                <div class="odds-div">
+                                                    0.940
+                                                </div>
+                                                <div class="hds-div">0-60</div>
+                                                <div class="right-flex">
+                                                    <div class="ot-div"></div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="btype-tr">
+                                        <td class="play-td-1  odds-click" eid="24591" gc="14" gtype="1" btype="2"
+                                            bindex="1" bhd="2-30" bodds="0.930">
+                                            <div class="left-flex">
+                                                <div class="ot-div">大</div>
+                                                <div class="right-flex">
+                                                    <div class="hds-div">2-30</div>
+                                                    <div class="odds-div">
+                                                        0.930
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="play-btype">
+                                            大小
+                                        </td>
+                                        <td class="play-td-2  odds-click" eid="24591" gc="14" gtype="1" btype="2"
+                                            bindex="2" bhd="2-30" bodds="0.930">
+                                            <div class="left-flex">
+                                                <div class="odds-div">
+                                                    0.930
+                                                </div>
+                                                <div class="hds-div"></div>
+                                                <div class="right-flex">
+                                                    <div class="ot-div">小</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="btype-tr">
+                                        <td class="play-td-1  odds-click" eid="24591" gc="14" gtype="1" btype="3"
+                                            bindex="1" bhd="" bodds="2.560">
+                                            <div class="left-flex">
+                                                <div class="ot-div"></div>
+                                                <div class="right-flex">
+                                                    <div class="hds-div"></div>
+                                                    <div class="odds-div">
+                                                        2.560
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="play-btype">
+                                            獨贏
+                                        </td>
+                                        <td class="play-td-2  odds-click" eid="24591" gc="14" gtype="1" btype="3"
+                                            bindex="2" bhd="" bodds="1.110">
+                                            <div class="left-flex">
+                                                <div class="odds-div">
+                                                    1.110
+                                                </div>
+                                                <div class="hds-div"></div>
+                                                <div class="right-flex">
+                                                    <div class="ot-div"></div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="btype-tr">
+                                        <td class="play-td-1 close-status">
+                                        </td>
+                                        <td class="play-btype">
+                                            和局
+                                        </td>
+                                        <td class="play-td-2  odds-click" eid="24591" gc="14" gtype="1" btype="3"
+                                            bindex="3" bhd="" bodds="2.070">
+                                            <div class="left-flex">
+                                                <div class="odds-div">
+                                                    2.070
+                                                </div>
+                                                <div class="hds-div"></div>
+                                                <div class="right-flex">
+                                                    <div class="ot-div"></div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="btype-tr">
+                                        <td class="play-td-1  odds-click" eid="24591" gc="14" gtype="1" btype="4"
+                                            bindex="1" bhd="" bodds="0.970">
+                                            <div class="left-flex">
+                                                <div class="ot-div">單</div>
+                                                <div class="right-flex">
+                                                    <div class="hds-div"></div>
+                                                    <div class="odds-div">
+                                                        0.970
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="play-btype">
+                                            單雙
+                                        </td>
+                                        <td class="play-td-2  odds-click" eid="24591" gc="14" gtype="1" btype="4"
+                                            bindex="2" bhd="" bodds="0.930">
+                                            <div class="left-flex">
+                                                <div class="odds-div">
+                                                    0.930
+                                                </div>
+                                                <div class="hds-div"></div>
+                                                <div class="right-flex">
+                                                    <div class="ot-div">雙</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr> -->
+
+
+                                    <!-- <tr class="ranks-tr">
+                                        <td class="fixed-w">
+                                            <div class="left-flex">
+                                                <div class="game-start-datetime">
+                                                    07-20<br>00:00
+                                                </div>
+                                                <div class="right-flex">
+                                                    <div>
+                                                        <div>馬爾默</div>
+                                                        <div class="rank-notes hidden"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="play-against">
+                                            VS
+                                        </td>
+                                        <td class="fixed-w">
+                                            <div>薩基列斯<font class="master-txt">(主)</font>
+                                            </div>
+                                            <div class="rank-notes hidden"></div>
+                                        </td>
+                                    </tr>
+                                    <tr class="btype-tr">
+                                        <td class="play-td-1  odds-click" eid="24571" gc="14" gtype="1" btype="1"
+                                            bindex="1" bhd="1+55" bodds="0.940">
+                                            <div class="left-flex">
+                                                <div class="ot-div"></div>
+                                                <div class="right-flex">
+                                                    <div class="hds-div">1+55</div>
+                                                    <div class="odds-div">
+                                                        0.940
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="play-btype">
+                                            讓分
+                                        </td>
+                                        <td class="play-td-2  odds-click" eid="24571" gc="14" gtype="1" btype="1"
+                                            bindex="2" bhd="1+55" bodds="0.940">
+                                            <div class="left-flex">
+                                                <div class="odds-div">
+                                                    0.940
+                                                </div>
+                                                <div class="hds-div"></div>
+                                                <div class="right-flex">
+                                                    <div class="ot-div"></div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="btype-tr">
+                                        <td class="play-td-1  odds-click" eid="24571" gc="14" gtype="1" btype="2"
+                                            bindex="1" bhd="2-80" bodds="0.930">
+                                            <div class="left-flex">
+                                                <div class="ot-div">大</div>
+                                                <div class="right-flex">
+                                                    <div class="hds-div">2-80</div>
+                                                    <div class="odds-div">
+                                                        0.930
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="play-btype">
+                                            大小
+                                        </td>
+                                        <td class="play-td-2  odds-click" eid="24571" gc="14" gtype="1" btype="2"
+                                            bindex="2" bhd="2-80" bodds="0.930">
+                                            <div class="left-flex">
+                                                <div class="odds-div">
+                                                    0.930
+                                                </div>
+                                                <div class="hds-div"></div>
+                                                <div class="right-flex">
+                                                    <div class="ot-div">小</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="btype-tr">
+                                        <td class="play-td-1  odds-click" eid="24571" gc="14" gtype="1" btype="3"
+                                            bindex="1" bhd="" bodds="0.669">
+                                            <div class="left-flex">
+                                                <div class="ot-div"></div>
+                                                <div class="right-flex">
+                                                    <div class="hds-div"></div>
+                                                    <div class="odds-div">
+                                                        0.669
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="play-btype">
+                                            獨贏
+                                        </td>
+                                        <td class="play-td-2  odds-click" eid="24571" gc="14" gtype="1" btype="3"
+                                            bindex="2" bhd="" bodds="4.160">
+                                            <div class="left-flex">
+                                                <div class="odds-div">
+                                                    4.160
+                                                </div>
+                                                <div class="hds-div"></div>
+                                                <div class="right-flex">
+                                                    <div class="ot-div"></div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="btype-tr">
+                                        <td class="play-td-1 close-status">
+                                        </td>
+                                        <td class="play-btype">
+                                            和局
+                                        </td>
+                                        <td class="play-td-2  odds-click" eid="24571" gc="14" gtype="1" btype="3"
+                                            bindex="3" bhd="" bodds="2.580">
+                                            <div class="left-flex">
+                                                <div class="odds-div">
+                                                    2.580
+                                                </div>
+                                                <div class="hds-div"></div>
+                                                <div class="right-flex">
+                                                    <div class="ot-div"></div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="btype-tr">
+                                        <td class="play-td-1  odds-click" eid="24571" gc="14" gtype="1" btype="4"
+                                            bindex="1" bhd="" bodds="0.970">
+                                            <div class="left-flex">
+                                                <div class="ot-div">單</div>
+                                                <div class="right-flex">
+                                                    <div class="hds-div"></div>
+                                                    <div class="odds-div">
+                                                        0.970
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="play-btype">
+                                            單雙
+                                        </td>
+                                        <td class="play-td-2  odds-click" eid="24571" gc="14" gtype="1" btype="4"
+                                            bindex="2" bhd="" bodds="0.930">
+                                            <div class="left-flex">
+                                                <div class="odds-div">
+                                                    0.930
+                                                </div>
+                                                <div class="hds-div"></div>
+                                                <div class="right-flex">
+                                                    <div class="ot-div">雙</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="ranks-tr">
+                                        <td class="fixed-w">
+                                            <div class="left-flex">
+                                                <div class="game-start-datetime">
+                                                    07-20<br>00:00
+                                                </div>
+                                                <div class="right-flex">
+                                                    <div>
+                                                        <div>F91杜迪蘭治</div>
+                                                        <div class="rank-notes hidden"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="play-against">
+                                            VS
+                                        </td>
+                                        <td class="fixed-w">
+                                            <div>佩歷克<font class="master-txt">(主)</font>
+                                            </div>
+                                            <div class="rank-notes hidden"></div>
+                                        </td>
+                                    </tr>
+                                    <tr class="btype-tr">
+                                        <td class="play-td-1  odds-click" eid="24567" gc="14" gtype="1" btype="1"
+                                            bindex="1" bhd="0-85" bodds="0.940">
+                                            <div class="left-flex">
+                                                <div class="ot-div"></div>
+                                                <div class="right-flex">
+                                                    <div class="hds-div"></div>
+                                                    <div class="odds-div">
+                                                        0.940
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="play-btype">
+                                            讓分
+                                        </td>
+                                        <td class="play-td-2  odds-click" eid="24567" gc="14" gtype="1" btype="1"
+                                            bindex="2" bhd="0-85" bodds="0.940">
+                                            <div class="left-flex">
+                                                <div class="odds-div">
+                                                    0.940
+                                                </div>
+                                                <div class="hds-div">0-85</div>
+                                                <div class="right-flex">
+                                                    <div class="ot-div"></div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="btype-tr">
+                                        <td class="play-td-1  odds-click" eid="24567" gc="14" gtype="1" btype="2"
+                                            bindex="1" bhd="2-20" bodds="0.930">
+                                            <div class="left-flex">
+                                                <div class="ot-div">大</div>
+                                                <div class="right-flex">
+                                                    <div class="hds-div">2-20</div>
+                                                    <div class="odds-div">
+                                                        0.930
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="play-btype">
+                                            大小
+                                        </td>
+                                        <td class="play-td-2  odds-click" eid="24567" gc="14" gtype="1" btype="2"
+                                            bindex="2" bhd="2-20" bodds="0.930">
+                                            <div class="left-flex">
+                                                <div class="odds-div">
+                                                    0.930
+                                                </div>
+                                                <div class="hds-div"></div>
+                                                <div class="right-flex">
+                                                    <div class="ot-div">小</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="btype-tr">
+                                        <td class="play-td-1  odds-click" eid="24567" gc="14" gtype="1" btype="3"
+                                            bindex="1" bhd="" bodds="2.890">
+                                            <div class="left-flex">
+                                                <div class="ot-div"></div>
+                                                <div class="right-flex">
+                                                    <div class="hds-div"></div>
+                                                    <div class="odds-div">
+                                                        2.890
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="play-btype">
+                                            獨贏
+                                        </td>
+                                        <td class="play-td-2  odds-click" eid="24567" gc="14" gtype="1" btype="3"
+                                            bindex="2" bhd="" bodds="0.902">
+                                            <div class="left-flex">
+                                                <div class="odds-div">
+                                                    0.902
+                                                </div>
+                                                <div class="hds-div"></div>
+                                                <div class="right-flex">
+                                                    <div class="ot-div"></div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="btype-tr">
+                                        <td class="play-td-1 close-status">
+                                        </td>
+                                        <td class="play-btype">
+                                            和局
+                                        </td>
+                                        <td class="play-td-2  odds-click" eid="24567" gc="14" gtype="1" btype="3"
+                                            bindex="3" bhd="" bodds="2.350">
+                                            <div class="left-flex">
+                                                <div class="odds-div">
+                                                    2.350
+                                                </div>
+                                                <div class="hds-div"></div>
+                                                <div class="right-flex">
+                                                    <div class="ot-div"></div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="btype-tr">
+                                        <td class="play-td-1  odds-click" eid="24567" gc="14" gtype="1" btype="4"
+                                            bindex="1" bhd="" bodds="0.970">
+                                            <div class="left-flex">
+                                                <div class="ot-div">單</div>
+                                                <div class="right-flex">
+                                                    <div class="hds-div"></div>
+                                                    <div class="odds-div">
+                                                        0.970
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="play-btype">
+                                            單雙
+                                        </td>
+                                        <td class="play-td-2  odds-click" eid="24567" gc="14" gtype="1" btype="4"
+                                            bindex="2" bhd="" bodds="0.930">
+                                            <div class="left-flex">
+                                                <div class="odds-div">
+                                                    0.930
+                                                </div>
+                                                <div class="hds-div"></div>
+                                                <div class="right-flex">
+                                                    <div class="ot-div">雙</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="ranks-tr">
+                                        <td class="fixed-w">
+                                            <div class="left-flex">
+                                                <div class="game-start-datetime">
+                                                    07-20<br>01:45
+                                                </div>
+                                                <div class="right-flex">
+                                                    <div>
+                                                        <div>沙姆洛克流浪</div>
+                                                        <div class="rank-notes hidden"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="play-against">
+                                            VS
+                                        </td>
+                                        <td class="fixed-w">
+                                            <div>盧多格德斯<font class="master-txt">(主)</font>
+                                            </div>
+                                            <div class="rank-notes hidden"></div>
+                                        </td>
+                                    </tr>
+                                    <tr class="btype-tr">
+                                        <td class="play-td-1  odds-click" eid="24579" gc="14" gtype="1" btype="1"
+                                            bindex="1" bhd="1-50" bodds="0.940">
+                                            <div class="left-flex">
+                                                <div class="ot-div"></div>
+                                                <div class="right-flex">
+                                                    <div class="hds-div"></div>
+                                                    <div class="odds-div">
+                                                        0.940
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="play-btype">
+                                            讓分
+                                        </td>
+                                        <td class="play-td-2  odds-click" eid="24579" gc="14" gtype="1" btype="1"
+                                            bindex="2" bhd="1-50" bodds="0.940">
+                                            <div class="left-flex">
+                                                <div class="odds-div">
+                                                    0.940
+                                                </div>
+                                                <div class="hds-div">1-50</div>
+                                                <div class="right-flex">
+                                                    <div class="ot-div"></div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="btype-tr">
+                                        <td class="play-td-1  odds-click" eid="24579" gc="14" gtype="1" btype="2"
+                                            bindex="1" bhd="2-80" bodds="0.930">
+                                            <div class="left-flex">
+                                                <div class="ot-div">大</div>
+                                                <div class="right-flex">
+                                                    <div class="hds-div">2-80</div>
+                                                    <div class="odds-div">
+                                                        0.930
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="play-btype">
+                                            大小
+                                        </td>
+                                        <td class="play-td-2  odds-click" eid="24579" gc="14" gtype="1" btype="2"
+                                            bindex="2" bhd="2-80" bodds="0.930">
+                                            <div class="left-flex">
+                                                <div class="odds-div">
+                                                    0.930
+                                                </div>
+                                                <div class="hds-div"></div>
+                                                <div class="right-flex">
+                                                    <div class="ot-div">小</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="btype-tr">
+                                        <td class="play-td-1  odds-click" eid="24579" gc="14" gtype="1" btype="3"
+                                            bindex="1" bhd="" bodds="8.390">
+                                            <div class="left-flex">
+                                                <div class="ot-div"></div>
+                                                <div class="right-flex">
+                                                    <div class="hds-div"></div>
+                                                    <div class="odds-div">
+                                                        8.390
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="play-btype">
+                                            獨贏
+                                        </td>
+                                        <td class="play-td-2  odds-click" eid="24579" gc="14" gtype="1" btype="3"
+                                            bindex="2" bhd="" bodds="0.327">
+                                            <div class="left-flex">
+                                                <div class="odds-div">
+                                                    0.327
+                                                </div>
+                                                <div class="hds-div"></div>
+                                                <div class="right-flex">
+                                                    <div class="ot-div"></div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="btype-tr">
+                                        <td class="play-td-1 close-status">
+                                        </td>
+                                        <td class="play-btype">
+                                            和局
+                                        </td>
+                                        <td class="play-td-2  odds-click" eid="24579" gc="14" gtype="1" btype="3"
+                                            bindex="3" bhd="" bodds="3.440">
+                                            <div class="left-flex">
+                                                <div class="odds-div">
+                                                    3.440
+                                                </div>
+                                                <div class="hds-div"></div>
+                                                <div class="right-flex">
+                                                    <div class="ot-div"></div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="btype-tr">
+                                        <td class="play-td-1  odds-click" eid="24579" gc="14" gtype="1" btype="4"
+                                            bindex="1" bhd="" bodds="0.970">
+                                            <div class="left-flex">
+                                                <div class="ot-div">單</div>
+                                                <div class="right-flex">
+                                                    <div class="hds-div"></div>
+                                                    <div class="odds-div">
+                                                        0.970
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="play-btype">
+                                            單雙
+                                        </td>
+                                        <td class="play-td-2  odds-click" eid="24579" gc="14" gtype="1" btype="4"
+                                            bindex="2" bhd="" bodds="0.930">
+                                            <div class="left-flex">
+                                                <div class="odds-div">
+                                                    0.930
+                                                </div>
+                                                <div class="hds-div"></div>
+                                                <div class="right-flex">
+                                                    <div class="ot-div">雙</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="ranks-tr">
+                                        <td class="fixed-w">
+                                            <div class="left-flex">
+                                                <div class="game-start-datetime">
+                                                    07-20<br>01:45
+                                                </div>
+                                                <div class="right-flex">
+                                                    <div>
+                                                        <div>AEK拉納卡</div>
+                                                        <div class="rank-notes hidden"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="play-against">
+                                            VS
+                                        </td>
+                                        <td class="fixed-w">
+                                            <div>米迪蘭特<font class="master-txt">(主)</font>
+                                            </div>
+                                            <div class="rank-notes hidden"></div>
+                                        </td>
+                                    </tr>
+                                    <tr class="btype-tr">
+                                        <td class="play-td-1  odds-click" eid="24575" gc="14" gtype="1" btype="1"
+                                            bindex="1" bhd="1-30" bodds="0.940">
+                                            <div class="left-flex">
+                                                <div class="ot-div"></div>
+                                                <div class="right-flex">
+                                                    <div class="hds-div"></div>
+                                                    <div class="odds-div">
+                                                        0.940
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="play-btype">
+                                            讓分
+                                        </td>
+                                        <td class="play-td-2  odds-click" eid="24575" gc="14" gtype="1" btype="1"
+                                            bindex="2" bhd="1-30" bodds="0.940">
+                                            <div class="left-flex">
+                                                <div class="odds-div">
+                                                    0.940
+                                                </div>
+                                                <div class="hds-div">1-30</div>
+                                                <div class="right-flex">
+                                                    <div class="ot-div"></div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="btype-tr">
+                                        <td class="play-td-1  odds-click" eid="24575" gc="14" gtype="1" btype="2"
+                                            bindex="1" bhd="2-90" bodds="0.930">
+                                            <div class="left-flex">
+                                                <div class="ot-div">大</div>
+                                                <div class="right-flex">
+                                                    <div class="hds-div">2-90</div>
+                                                    <div class="odds-div">
+                                                        0.930
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="play-btype">
+                                            大小
+                                        </td>
+                                        <td class="play-td-2  odds-click" eid="24575" gc="14" gtype="1" btype="2"
+                                            bindex="2" bhd="2-90" bodds="0.930">
+                                            <div class="left-flex">
+                                                <div class="odds-div">
+                                                    0.930
+                                                </div>
+                                                <div class="hds-div"></div>
+                                                <div class="right-flex">
+                                                    <div class="ot-div">小</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="btype-tr">
+                                        <td class="play-td-1  odds-click" eid="24575" gc="14" gtype="1" btype="3"
+                                            bindex="1" bhd="" bodds="7.430">
+                                            <div class="left-flex">
+                                                <div class="ot-div"></div>
+                                                <div class="right-flex">
+                                                    <div class="hds-div"></div>
+                                                    <div class="odds-div">
+                                                        7.430
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="play-btype">
+                                            獨贏
+                                        </td>
+                                        <td class="play-td-2  odds-click" eid="24575" gc="14" gtype="1" btype="3"
+                                            bindex="2" bhd="" bodds="0.381">
+                                            <div class="left-flex">
+                                                <div class="odds-div">
+                                                    0.381
+                                                </div>
+                                                <div class="hds-div"></div>
+                                                <div class="right-flex">
+                                                    <div class="ot-div"></div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="btype-tr">
+                                        <td class="play-td-1 close-status">
+                                        </td>
+                                        <td class="play-btype">
+                                            和局
+                                        </td>
+                                        <td class="play-td-2  odds-click" eid="24575" gc="14" gtype="1" btype="3"
+                                            bindex="3" bhd="" bodds="3.340">
+                                            <div class="left-flex">
+                                                <div class="odds-div">
+                                                    3.340
+                                                </div>
+                                                <div class="hds-div"></div>
+                                                <div class="right-flex">
+                                                    <div class="ot-div"></div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="btype-tr">
+                                        <td class="play-td-1  odds-click" eid="24575" gc="14" gtype="1" btype="4"
+                                            bindex="1" bhd="" bodds="0.970">
+                                            <div class="left-flex">
+                                                <div class="ot-div">單</div>
+                                                <div class="right-flex">
+                                                    <div class="hds-div"></div>
+                                                    <div class="odds-div">
+                                                        0.970
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="play-btype">
+                                            單雙
+                                        </td>
+                                        <td class="play-td-2  odds-click" eid="24575" gc="14" gtype="1" btype="4"
+                                            bindex="2" bhd="" bodds="0.930">
+                                            <div class="left-flex">
+                                                <div class="odds-div">
+                                                    0.930
+                                                </div>
+                                                <div class="hds-div"></div>
+                                                <div class="right-flex">
+                                                    <div class="ot-div">雙</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="ranks-tr">
+                                        <td class="fixed-w">
+                                            <div class="left-flex">
+                                                <div class="game-start-datetime">
+                                                    07-20<br>02:45
+                                                </div>
+                                                <div class="right-flex">
+                                                    <div>
+                                                        <div>波杜基林特</div>
+                                                        <div class="rank-notes hidden"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="play-against">
+                                            VS
+                                        </td>
+                                        <td class="fixed-w">
+                                            <div>林菲爾德<font class="master-txt">(主)</font>
+                                            </div>
+                                            <div class="rank-notes hidden"></div>
+                                        </td>
+                                    </tr>
+                                    <tr class="btype-tr">
+                                        <td class="play-td-1  odds-click" eid="24583" gc="14" gtype="1" btype="1"
+                                            bindex="1" bhd="1-5" bodds="0.940">
+                                            <div class="left-flex">
+                                                <div class="ot-div"></div>
+                                                <div class="right-flex">
+                                                    <div class="hds-div">1-5</div>
+                                                    <div class="odds-div">
+                                                        0.940
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="play-btype">
+                                            讓分
+                                        </td>
+                                        <td class="play-td-2  odds-click" eid="24583" gc="14" gtype="1" btype="1"
+                                            bindex="2" bhd="1-5" bodds="0.940">
+                                            <div class="left-flex">
+                                                <div class="odds-div">
+                                                    0.940
+                                                </div>
+                                                <div class="hds-div"></div>
+                                                <div class="right-flex">
+                                                    <div class="ot-div"></div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="btype-tr">
+                                        <td class="play-td-1  odds-click" eid="24583" gc="14" gtype="1" btype="2"
+                                            bindex="1" bhd="3+80" bodds="0.930">
+                                            <div class="left-flex">
+                                                <div class="ot-div">大</div>
+                                                <div class="right-flex">
+                                                    <div class="hds-div">3+80</div>
+                                                    <div class="odds-div">
+                                                        0.930
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="play-btype">
+                                            大小
+                                        </td>
+                                        <td class="play-td-2  odds-click" eid="24583" gc="14" gtype="1" btype="2"
+                                            bindex="2" bhd="3+80" bodds="0.930">
+                                            <div class="left-flex">
+                                                <div class="odds-div">
+                                                    0.930
+                                                </div>
+                                                <div class="hds-div"></div>
+                                                <div class="right-flex">
+                                                    <div class="ot-div">小</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="btype-tr">
+                                        <td class="play-td-1  odds-click" eid="24583" gc="14" gtype="1" btype="3"
+                                            bindex="1" bhd="" bodds="0.448">
+                                            <div class="left-flex">
+                                                <div class="ot-div"></div>
+                                                <div class="right-flex">
+                                                    <div class="hds-div"></div>
+                                                    <div class="odds-div">
+                                                        0.448
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="play-btype">
+                                            獨贏
+                                        </td>
+                                        <td class="play-td-2  odds-click" eid="24583" gc="14" gtype="1" btype="3"
+                                            bindex="2" bhd="" bodds="5.470">
+                                            <div class="left-flex">
+                                                <div class="odds-div">
+                                                    5.470
+                                                </div>
+                                                <div class="hds-div"></div>
+                                                <div class="right-flex">
+                                                    <div class="ot-div"></div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="btype-tr">
+                                        <td class="play-td-1 close-status">
+                                        </td>
+                                        <td class="play-btype">
+                                            和局
+                                        </td>
+                                        <td class="play-td-2  odds-click" eid="24583" gc="14" gtype="1" btype="3"
+                                            bindex="3" bhd="" bodds="3.380">
+                                            <div class="left-flex">
+                                                <div class="odds-div">
+                                                    3.380
+                                                </div>
+                                                <div class="hds-div"></div>
+                                                <div class="right-flex">
+                                                    <div class="ot-div"></div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="btype-tr">
+                                        <td class="play-td-1  odds-click" eid="24583" gc="14" gtype="1" btype="4"
+                                            bindex="1" bhd="" bodds="0.970">
+                                            <div class="left-flex">
+                                                <div class="ot-div">單</div>
+                                                <div class="right-flex">
+                                                    <div class="hds-div"></div>
+                                                    <div class="odds-div">
+                                                        0.970
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="play-btype">
+                                            單雙
+                                        </td>
+                                        <td class="play-td-2  odds-click" eid="24583" gc="14" gtype="1" btype="4"
+                                            bindex="2" bhd="" bodds="0.930">
+                                            <div class="left-flex">
+                                                <div class="odds-div">
+                                                    0.930
+                                                </div>
+                                                <div class="hds-div"></div>
+                                                <div class="right-flex">
+                                                    <div class="ot-div">雙</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="ranks-tr">
+                                        <td class="fixed-w">
+                                            <div class="left-flex">
+                                                <div class="game-start-datetime">
+                                                    07-20<br>03:00
+                                                </div>
+                                                <div class="right-flex">
+                                                    <div>
+                                                        <div>史酷匹</div>
+                                                        <div class="rank-notes hidden"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="play-against">
+                                            VS
+                                        </td>
+                                        <td class="fixed-w">
+                                            <div>薩格勒布戴拿模<font class="master-txt">(主)</font>
+                                            </div>
+                                            <div class="rank-notes hidden"></div>
+                                        </td>
+                                    </tr>
+                                    <tr class="btype-tr">
+                                        <td class="play-td-1  odds-click" eid="24587" gc="14" gtype="1" btype="1"
+                                            bindex="1" bhd="2-60" bodds="0.940">
+                                            <div class="left-flex">
+                                                <div class="ot-div"></div>
+                                                <div class="right-flex">
+                                                    <div class="hds-div"></div>
+                                                    <div class="odds-div">
+                                                        0.940
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="play-btype">
+                                            讓分
+                                        </td>
+                                        <td class="play-td-2  odds-click" eid="24587" gc="14" gtype="1" btype="1"
+                                            bindex="2" bhd="2-60" bodds="0.940">
+                                            <div class="left-flex">
+                                                <div class="odds-div">
+                                                    0.940
+                                                </div>
+                                                <div class="hds-div">2-60</div>
+                                                <div class="right-flex">
+                                                    <div class="ot-div"></div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="btype-tr">
+                                        <td class="play-td-1  odds-click" eid="24587" gc="14" gtype="1" btype="2"
+                                            bindex="1" bhd="3+20" bodds="0.930">
+                                            <div class="left-flex">
+                                                <div class="ot-div">大</div>
+                                                <div class="right-flex">
+                                                    <div class="hds-div">3+20</div>
+                                                    <div class="odds-div">
+                                                        0.930
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="play-btype">
+                                            大小
+                                        </td>
+                                        <td class="play-td-2  odds-click" eid="24587" gc="14" gtype="1" btype="2"
+                                            bindex="2" bhd="3+20" bodds="0.930">
+                                            <div class="left-flex">
+                                                <div class="odds-div">
+                                                    0.930
+                                                </div>
+                                                <div class="hds-div"></div>
+                                                <div class="right-flex">
+                                                    <div class="ot-div">小</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="btype-tr">
+                                        <td class="play-td-1  odds-click" eid="24587" gc="14" gtype="1" btype="3"
+                                            bindex="1" bhd="" bodds="9.799">
+                                            <div class="left-flex">
+                                                <div class="ot-div"></div>
+                                                <div class="right-flex">
+                                                    <div class="hds-div"></div>
+                                                    <div class="odds-div">
+                                                        9.799
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="play-btype">
+                                            獨贏
+                                        </td>
+                                        <td class="play-td-2  odds-click" eid="24587" gc="14" gtype="1" btype="3"
+                                            bindex="2" bhd="" bodds="0.055">
+                                            <div class="left-flex">
+                                                <div class="odds-div">
+                                                    0.055
+                                                </div>
+                                                <div class="hds-div"></div>
+                                                <div class="right-flex">
+                                                    <div class="ot-div"></div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="btype-tr">
+                                        <td class="play-td-1 close-status">
+                                        </td>
+                                        <td class="play-btype">
+                                            和局
+                                        </td>
+                                        <td class="play-td-2  odds-click" eid="24587" gc="14" gtype="1" btype="3"
+                                            bindex="3" bhd="" bodds="8.020">
+                                            <div class="left-flex">
+                                                <div class="odds-div">
+                                                    8.020
+                                                </div>
+                                                <div class="hds-div"></div>
+                                                <div class="right-flex">
+                                                    <div class="ot-div"></div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="btype-tr">
+                                        <td class="play-td-1  odds-click" eid="24587" gc="14" gtype="1" btype="4"
+                                            bindex="1" bhd="" bodds="0.970">
+                                            <div class="left-flex">
+                                                <div class="ot-div">單</div>
+                                                <div class="right-flex">
+                                                    <div class="hds-div"></div>
+                                                    <div class="odds-div">
+                                                        0.970
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="play-btype">
+                                            單雙
+                                        </td>
+                                        <td class="play-td-2  odds-click" eid="24587" gc="14" gtype="1" btype="4"
+                                            bindex="2" bhd="" bodds="0.930">
+                                            <div class="left-flex">
+                                                <div class="odds-div">
+                                                    0.930
+                                                </div>
+                                                <div class="hds-div"></div>
+                                                <div class="right-flex">
+                                                    <div class="ot-div">雙</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr> -->
+                                </tbody>
+                            </table>
+                        </div>
+                        <div id="league-content-div" class="league-content-div"></div>
+                        <div id="betting-div-mask" class="betting-div-mask"></div>
+                        <div id="betting-div" class="betting-div"></div>
+                        <input type="hidden" id="game-category" value="14">
+                        <input type="hidden" id="game-type" value="1">
+                        <input type="hidden" id="billing-date" value="">
+                    </div>
+
+                </div>
+                <div id="footer-fixed-height" style="height: 106.891px;"></div>
+                <!--slot=0-->
+                <div id="footer">
+                    <div class="btn">
+                        <i class="fa fa-random icon"
+                            onclick="event.stopPropagation();$('#footer .nice-select.events-sort-type-select').click();"></i>
+                        <select id="events-sort-type-select" class="events-sort-type-select"
+                            onchange="events_change_sort_type(this);" style="display:none;">
+                            <option value="1">聯盟排序</option>
+                            <option value="2">時間排序</option>
+                        </select>
+                        <div class="nice-select events-sort-type-select" tabindex="0"><span class="current">聯盟排序</span>
+                            <ul class="list">
+                                <li data-value="1" class="option selected">聯盟排序</li>
+                                <li data-value="2" class="option">時間排序</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="btn" onclick="req_events_league_select_content();">
+                        <i class="fa fa-shield icon"></i>
+                        <span>選擇聯盟</span>
+                    </div>
+                    <div class="btn hidden" id="wait-order-btn" onclick="display_cross_betting_div();">
+                        <div class="wait-order-num" id="wait-order-num">0</div>
+                        <span>點此投注</span>
+                    </div>
+                    <a class="btn" href="bet_record.php?type=1">
+                        <i class="fa fa-file-text-o icon"></i>
+                        <span>投注紀錄</span>
+                    </a>
+                    <div class="btn general-menu-btn menu-btn">
+                        <i class="fa fa-bars icon"></i>
+                        <span>更&nbsp;多</span>
+                    </div>
+                </div>
+                <nav id="general-menu" class="pushy pushy-right" style="">
+                    <div class="member-info">
+                        <ul>
+                            <li class="v1">
+                                <div class="cus-userid">2ATTTm1_ta3 / 測試會員</div>
+                                <a class="btn-announcement on" href="news.php"><img
+                                        src="templates/images/btn_announcement.svg"></a>
+                            </li>
+                            <li>
+                                [07/19]信用&nbsp;<span id="use-credit-19" class="use-credit-txt">0</span>&nbsp;
+                                [點數]&nbsp;<span id="tickets-credits" class="tickets-credits-txt">2841
+                                </span></li>
+                            <li>
+                                [07/20]信用&nbsp;<span id="use-credit-20" class="use-credit-txt">0</span>
+                            </li>
+                            <li>
+                                <select class="change-lang" onchange="change_lang(this.value);">
+                                    <!--slot=2-->
+
+                                    <option value="tw" selected="">繁體</option>
+
+                                    <option value="cn">简体</option>
+
+                                    <option value="en">ENG</option>
+
+
+                                </select>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="menu-list">
+                        <ul>
+
+                            <li class="hidden">
+                                <a class="item" href="transfer_quota.php?type=1">
+                                    <div class="icon"><i class="fa fa-exchange"></i></div>
+                                    <div class="txt">遊戲轉點</div>
+                                </a>
+                            </li>
+                            <li class="hidden">
+                                <a class="item" href="member_info.php">
+                                    <div class="icon"><i class="fa fa-building"></i></div>
+                                    <div class="txt">會員限紅</div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="item" href="features.php">
+                                    <div class="icon"><i class="fa fa-gear"></i></div>
+                                    <div class="txt">功能設定</div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="item" href="regulation.php">
+                                    <div class="icon"><i class="fa fa-info-circle"></i></div>
+                                    <div class="txt">規則條例</div>
+                                </a>
+                            </li>
+                            <li class="hidden">
+                                <a class="item" href="login_pass.php">
+                                    <div class="icon"><i class="fa fa-lock"></i></div>
+                                    <div class="txt">修改密碼</div>
+                                </a>
+                            </li>
+                            <li class="hidden">
+                                <a class="item" href="related_site.php">
+                                    <div class="icon"><i class="fa fa-share-alt"></i></div>
+                                    <div class="txt">相關網站</div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="item" href="check_sport_live_page.php" target="_blank">
+                                    <div class="icon"><i class="fa fa-youtube-play"></i></div>
+                                    <div class="txt">體育直播</div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="item" href="check_live_video_page.php" target="_blank">
+                                    <div class="icon"><i class="fa fa-podcast"></i></div>
+                                    <div class="txt">AV女優</div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="item" href="../index.php">
+                                    <div class="icon"><i class="fa fa-television"></i></div>
+                                    <div class="txt">切換電腦版</div>
+                                </a>
+                            </li>
+                            <li class="hidden">
+                                <a class="item" href="logout.php">
+                                    <div class="icon"><i class="fa fa-sign-out"></i></div>
+                                    <div class="txt">登出</div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <div id="pushyOverlay1" class=""></div>
+
+            </div>
+            <!-- BEGIN PAGE FIRST SCRIPTS -->
+            <!-- END PAGE FIRST SCRIPTS -->
+            <script src="templates/js/kang_ajax.js?c=303"></script>
+            <script src="templates//js/fastclick.js"></script>
+            <script src="layer/layer.js"></script>
+            <script src="nice_select/js/jquery.nice-select.min.js"></script>
+            <script src="pushy/js/pushy.js"></script>
+            <script src="templates/js/kang_common.js?c=105"></script>
+            <script src="templates/js/sty1_general1_all.js?c=25"></script>
+            <script src="templates/js/lang/tw.js?cache=100"></script>
+            <script src="templates/js/index/index.js?cache=3" type="text/javascript"></script>
+            <script>
+                let html = document.querySelector('html');
+                function fontsize() {
+                    if (window.innerWidth <= 800) {
+                        let font = window.innerWidth / 8
+                        html.style = 'font-size:' + font + 'px';
+
+                    } else {
+                        html.style = 'font-size:106px'
+                    }
+                }
+                window.addEventListener('resize', fontsize)
+                window.addEventListener('load', fontsize)
+            </script>
+
+    </nolink>
+    <div class="layui-layer-move"></div>
+</body>
+
+</html>
