@@ -133,14 +133,26 @@ body * {
 	font-size: 0.2rem;
 }
 
+.events-table .right-item {
+	color: #30679e;
+	font-weight: bold;
+}
+
 .events-table .master td>div {
 	display: flex;
 	justify-content: space-between;
 }
 
 .events-table .master .left-item {
-	color: rgb(172, 172, 172)
+	color: #888
 }
+
+.events-table .master,
+.events-table .customer,
+.events-table .draw {
+	color: #888
+}
+
 
 .events-table .master .border-none,
 .events-table .customer .border-none,
