@@ -868,12 +868,21 @@
 
 
 
+
 .events-table .master td,
 .events-table .customer td,
 .events-table .draw td {
 	border: 1px solid rgb(197, 197, 197);
 	width: 20%;
 }
+
+.events-table .master td,
+.events-table .customer td,
+.events-table .draw td {
+	border-bottom: none;
+	border-right: none;
+}
+
 
 
 .events-table td {
