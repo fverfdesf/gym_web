@@ -146,7 +146,7 @@
                             </tr>
                         </table>
 
-                        <div id="events-div" class="events-div" style="height: 612px;">
+                        <div id="events-div" class="events-div" style="height: 666px">
                             <!--slot=5-->
                             <table class="events-table" style="border-collapse: collapse;">
                                 <tbody>
@@ -1957,146 +1957,11 @@
                                 </tbody>
                             </table>
                         </div>
-                        <div id="league-content-div" class="league-content-div"></div>
-                        <div id="betting-div-mask" class="betting-div-mask"></div>
-                        <div id="betting-div" class="betting-div"></div>
-                        <input type="hidden" id="game-category" value="14">
-                        <input type="hidden" id="game-type" value="1">
-                        <input type="hidden" id="billing-date" value="">
+
                     </div>
 
                 </div>
-                <div id="footer-fixed-height" style="height: 106.891px;"></div>
-                <!--slot=0-->
-                <div id="footer">
-                    <div class="btn">
-                        <i class="fa fa-random icon"
-                            onclick="event.stopPropagation();$('#footer .nice-select.events-sort-type-select').click();"></i>
-                        <select id="events-sort-type-select" class="events-sort-type-select"
-                            onchange="events_change_sort_type(this);" style="display:none;">
-                            <option value="1">聯盟排序</option>
-                            <option value="2">時間排序</option>
-                        </select>
-                        <div class="nice-select events-sort-type-select" tabindex="0"><span class="current">聯盟排序</span>
-                            <ul class="list">
-                                <li data-value="1" class="option selected">聯盟排序</li>
-                                <li data-value="2" class="option">時間排序</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="btn" onclick="req_events_league_select_content();">
-                        <i class="fa fa-shield icon"></i>
-                        <span>選擇聯盟</span>
-                    </div>
-                    <div class="btn hidden" id="wait-order-btn" onclick="display_cross_betting_div();">
-                        <div class="wait-order-num" id="wait-order-num">0</div>
-                        <span>點此投注</span>
-                    </div>
-                    <a class="btn" href="bet_record.php?type=1">
-                        <i class="fa fa-file-text-o icon"></i>
-                        <span>投注紀錄</span>
-                    </a>
-                    <div class="btn general-menu-btn menu-btn">
-                        <i class="fa fa-bars icon"></i>
-                        <span>更&nbsp;多</span>
-                    </div>
-                </div>
-                <nav id="general-menu" class="pushy pushy-right" style="">
-                    <div class="member-info">
-                        <ul>
-                            <li class="v1">
-                                <div class="cus-userid">2ATTTm1_ta3 / 測試會員</div>
-                                <a class="btn-announcement on" href="news.php"><img
-                                        src="templates/images/btn_announcement.svg"></a>
-                            </li>
-                            <li>
-                                [07/19]信用&nbsp;<span id="use-credit-19" class="use-credit-txt">0</span>&nbsp;
-                                [點數]&nbsp;<span id="tickets-credits" class="tickets-credits-txt">2841
-                                </span></li>
-                            <li>
-                                [07/20]信用&nbsp;<span id="use-credit-20" class="use-credit-txt">0</span>
-                            </li>
-                            <li>
-                                <select class="change-lang" onchange="change_lang(this.value);">
-                                    <!--slot=2-->
 
-                                    <option value="tw" selected="">繁體</option>
-
-                                    <option value="cn">简体</option>
-
-                                    <option value="en">ENG</option>
-
-
-                                </select>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="menu-list">
-                        <ul>
-
-                            <li class="hidden">
-                                <a class="item" href="transfer_quota.php?type=1">
-                                    <div class="icon"><i class="fa fa-exchange"></i></div>
-                                    <div class="txt">遊戲轉點</div>
-                                </a>
-                            </li>
-                            <li class="hidden">
-                                <a class="item" href="member_info.php">
-                                    <div class="icon"><i class="fa fa-building"></i></div>
-                                    <div class="txt">會員限紅</div>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="item" href="features.php">
-                                    <div class="icon"><i class="fa fa-gear"></i></div>
-                                    <div class="txt">功能設定</div>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="item" href="regulation.php">
-                                    <div class="icon"><i class="fa fa-info-circle"></i></div>
-                                    <div class="txt">規則條例</div>
-                                </a>
-                            </li>
-                            <li class="hidden">
-                                <a class="item" href="login_pass.php">
-                                    <div class="icon"><i class="fa fa-lock"></i></div>
-                                    <div class="txt">修改密碼</div>
-                                </a>
-                            </li>
-                            <li class="hidden">
-                                <a class="item" href="related_site.php">
-                                    <div class="icon"><i class="fa fa-share-alt"></i></div>
-                                    <div class="txt">相關網站</div>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="item" href="check_sport_live_page.php" target="_blank">
-                                    <div class="icon"><i class="fa fa-youtube-play"></i></div>
-                                    <div class="txt">體育直播</div>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="item" href="check_live_video_page.php" target="_blank">
-                                    <div class="icon"><i class="fa fa-podcast"></i></div>
-                                    <div class="txt">AV女優</div>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="item" href="../index.php">
-                                    <div class="icon"><i class="fa fa-television"></i></div>
-                                    <div class="txt">切換電腦版</div>
-                                </a>
-                            </li>
-                            <li class="hidden">
-                                <a class="item" href="logout.php">
-                                    <div class="icon"><i class="fa fa-sign-out"></i></div>
-                                    <div class="txt">登出</div>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
                 <div id="pushyOverlay1" class=""></div>
 
             </div>
@@ -2113,11 +1978,12 @@
             <script src="templates/js/index/index.js?cache=3" type="text/javascript"></script>
             <script>
                 let html = document.querySelector('html');
+                let retbody = document.querySelector('#events-div')
+
                 function fontsize() {
                     if (window.innerWidth <= 800) {
                         let font = window.innerWidth / 8
                         html.style = 'font-size:' + font + 'px';
-
                     } else {
                         html.style = 'font-size:106px'
                     }
