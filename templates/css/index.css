@@ -124,12 +124,19 @@ body * {
 	border-right: none;
 }
 
+.events-table .customer td,
+.events-table .draw td {
+	color: #30679e;
+	font-weight: bold;
+}
+
 .events-table .master td:nth-child(1),
 .events-table .customer td:nth-child(1),
 .events-table .draw td:nth-child(1) {
 	text-align: center;
 	font-size: 0.2rem;
-	color: #888
+	color: #888;
+	font-weight: unset;
 }
 
 .events-table .left-item,
