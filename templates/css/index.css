@@ -148,7 +148,8 @@ body * {
 	border: none;
 }
 
-.events-table .customer td {
+.events-table .customer td,
+.events-table .draw td {
 	text-align: right;
 }
 
