@@ -114,6 +114,10 @@ body * {
 /* 卷軸樣式 */
 
 /* table style */
+.events-table td {
+	font-size: 0.2rem;
+}
+
 .events-table .master td:nth-child(5),
 .events-table .customer td:nth-child(5),
 .events-table .draw td:nth-child(5) {
@@ -125,6 +129,7 @@ body * {
 .events-table .draw td:nth-child(1) {
 	text-align: center;
 	font-size: 0.2rem;
+	color: #888
 }
 
 .events-table .left-item,
@@ -144,12 +149,6 @@ body * {
 }
 
 .events-table .master .left-item {
-	color: #888
-}
-
-.events-table .master,
-.events-table .customer,
-.events-table .draw {
 	color: #888
 }
 
