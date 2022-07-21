@@ -841,7 +841,6 @@
 .events-area .events-div .events-table .ranks-tr .left-flex {
 	display: flex;
 	align-items: center;
-	flex-grow: 1;
 }
 
 .events-area .events-div .events-table .ranks-tr .left-flex {
@@ -854,19 +853,22 @@
 	flex: 1;
 	display: flex;
 	align-items: center;
-	justify-content: space-around;
+	justify-content: space-between;
 	text-align: right;
-	flex-grow: 5;
 	margin-left: 0;
 }
 
 .events-area .events-div .events-table .ranks-tr .right-flex>div {
-	flex-grow: 1;
+	flex-grow: 2;
 	text-align: center;
-	max-width: 33%
+	max-width: 44%
 }
 
-
+.events-area .events-div .events-table .ranks-tr .right-flex>div:nth-child(2) {
+	flex-grow: 1;
+	text-align: center;
+	max-width: 10%
+}
 
 
 .events-table .master td,
