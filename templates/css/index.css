@@ -808,7 +808,9 @@
 
 /* --------------分隔線-------------- */
 
-/* 這裡開始 */
+/* START */
+
+/* 列項目樣式 START*/
 .menu-list-2 {
 	width: 100%;
 	background-color: #6da9e5;
@@ -832,8 +834,9 @@
 .menu-list-2 .list-2 td:nth-child(5) {
 	border-right: none;
 }
+/* 列項目樣式 END */
 
-/* table style */
+/* 表格樣式 START*/
 .events-area .events-div .events-table .ranks-tr .fixed-w {
 	width: 0;
 }
@@ -943,8 +946,9 @@
 .events-table .master .border-bottom {
 	border-bottom: 1px solid rgb(197, 197, 197);
 }
+/* 表格樣式 END */
 
-/* 這裡結束 */
+/* END */
 
 .change-type {
 	position: absolute;
