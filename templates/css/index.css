@@ -806,7 +806,7 @@
 	color: #fff;
 }
 
-
+/* --------------分隔線-------------- */
 
 /* 這裡開始 */
 .menu-list-2 {
@@ -879,15 +879,10 @@
 .events-table .master td,
 .events-table .customer td,
 .events-table .draw td {
-	border-bottom: none;
+	border-top: none;
 	border-right: none;
 }
 
-
-
-.events-table td {
-	/* font-size: 0.2rem; */
-}
 
 .events-table .master td:nth-child(5),
 .events-table .customer td:nth-child(5),
@@ -895,7 +890,7 @@
 	border-right: none;
 }
 
-.events-table .customer td,
+.events-table .master td,
 .events-table .draw td {
 	color: #30679e;
 	font-weight: bold;
@@ -921,12 +916,12 @@
 	font-weight: bold;
 }
 
-.events-table .master td>div {
+.events-table .customer td>div {
 	display: flex;
 	justify-content: space-between;
 }
 
-.events-table .master .left-item {
+.events-table .customer .left-item {
 	color: #888
 }
 
@@ -937,18 +932,21 @@
 	border: none;
 }
 
-.events-table .customer td,
+.events-table .master td,
 .events-table .draw td {
 	text-align: right;
 }
 
+
+
 .events-table .draw .border-bottom,
-.events-table .customer .border-bottom {
+.events-table .master .border-bottom {
 	border-bottom: 1px solid rgb(197, 197, 197);
 }
 
-.events-table .master .border-top {
+/* .events-table .customer .border-top {
 	border-top: 1px solid rgb(197, 197, 197);
-}
+} */
+
 
 /* 這裡結束 */
