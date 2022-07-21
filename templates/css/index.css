@@ -907,7 +907,7 @@
 .events-table .master td,
 .events-table .draw td {
   color: #30679e;
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 
 .events-table .master td:nth-child(1),
@@ -919,6 +919,11 @@
   width: 10%;
 }
 
+.events-table .customer td ~ td > div > span,
+.events-table .master td ~ td {
+  font-size: 0.2rem;
+}
+
 .events-table .left-item,
 .events-table .right-item {
   display: inline-block;
@@ -926,7 +931,7 @@
 
 .events-table .right-item {
   color: #30679e;
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 
 .events-table .customer td > div {
