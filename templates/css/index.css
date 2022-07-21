@@ -920,8 +920,9 @@
 }
 
 .events-table .customer td ~ td > div > span,
-.events-table .master td ~ td {
-  font-size: 0.2rem;
+.events-table .master td ~ td,
+.events-table .draw td ~ td {
+  font-size: 0.15rem;
 }
 
 .events-table .left-item,
